@@ -7,11 +7,11 @@ namespace DataAccess.Abstract
 {
     public interface IEntityRepository<T>
     {
+        //filtre yazabilmemizi sağlayacak(Expression)
         List<T> GetAll(Expression<Func<T,bool>> filter=null);
-        T Get(); 
+        T Get(Expression<Func<T, bool>> filter); 
         void Add(T entity);
         void Update(T entity);
         void Delete(T entity);
-        List<T> GetAllByCategory(int categoryId);
     }
 }
