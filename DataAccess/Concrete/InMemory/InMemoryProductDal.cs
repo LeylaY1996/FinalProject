@@ -8,14 +8,14 @@ using System.Text;
 
 namespace DataAccess.Concrete.InMemory
 {
-    public class InMemoryProductDal : IProductDal
+    public class EfProductDal : IProductDal
     {
 
         //veri varmış gibi davranıyoruz bu yüzden list oluşturuyoruz
         List<Product> _products;
 
         //uygulama çalıştığı anda constructor metodu çalışır
-        public InMemoryProductDal()
+        public EfProductDal()
         {
             _products = new List<Product> {
                 new Product{
@@ -69,12 +69,8 @@ namespace DataAccess.Concrete.InMemory
             throw new NotImplementedException();
         }
 
-        public List<Product> GetAll()
-        {
-            return _products;
-        }
 
-        public List<Product> GetAll(Expression<Func<Product, bool>> filter = null)
+        public List<Product> GetAll(Expression<Func<Product, bool>> filter=null )
         {
             throw new NotImplementedException();
         }
